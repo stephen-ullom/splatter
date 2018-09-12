@@ -19,8 +19,13 @@ module.exports = function (filePath, options, callback) {
 }
 
 function render(text) {
-    var output = '';
+    // If no splatter code is present just return
+    if(text.indexOf('*') == -1) {
+        return text;
+    }
+
     // Loop all asterisks
+    var output = '';
     var lastIndex = 0;
     var starIndex = -1;
     while ((starIndex = text.indexOf('*', starIndex + 1)) >= 0) {
