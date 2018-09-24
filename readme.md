@@ -75,3 +75,27 @@ Here's an example:
 </body>
 </html>
 ```
+# Express Example
+Here's an example of how to set up with express:
+
+``` javascript
+const express = require('express')
+const splatter = require('splatter');
+const app = express()
+
+app.engine('splat', splatter)
+
+app.set('views', './views') // specify the views directory
+app.set('view engine', 'splat') // register the template engine
+
+app.get('/', function (req, res) {
+    res.render('index', {
+        title: 'Page Title',
+        message: 'Hello there!'
+    })
+})
+var port = 3000;
+app.listen(port, () => console.log('Listening on http://localhost:' + port))
+```
+
+Use `*input.title` to output variables passed to the template.
