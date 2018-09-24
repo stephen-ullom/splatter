@@ -4,17 +4,18 @@ module.exports = function (filePath, options, callback) {
         if (err) return callback(err)
 
         // Remove all comments *[ <comment> ]
-        var rendered = content.toString().replace(/([^\*])\*\[.*?\]/g, '$1');
+        var rendered = content.toString().replace(/([^\*])\*\[[\s\S]*?\]/g, '$1');
 
-        rendered = 'var output=\`' + render(rendered) + '\`;';
+        var output = '';
+        rendered = 'output=\`' + render(rendered) + '\`;';
 
         try {
-            rendered = eval(rendered);
+            eval(rendered);
         } catch (err) {
             console.error(err.stack);
         }
 
-        return callback(null, rendered);
+        return callback(null, output);
     })
 }
 
