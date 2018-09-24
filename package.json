@@ -1,6 +1,6 @@
 {
     "name": "splatter",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A quicker template engine for Express.js",
     "main": "index.js",
     "scripts": {
