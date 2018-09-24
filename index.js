@@ -1,4 +1,4 @@
-module.exports = function (filePath, options, callback) {
+module.exports = function (filePath, input, callback) {
 
     require('fs').readFile(filePath, function (err, content) {
         if (err) return callback(err)
