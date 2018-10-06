@@ -4,7 +4,7 @@ module.exports = function (filePath, input, callback) {
         if (err) return callback(err)
 
         // Remove all comments *[ <comment> ]
-        var rendered = content.toString().replace(/([^\*])\*\[[\s\S]*?\]/g, '$1');
+        var rendered = content.toString().replace(/([^\*])\*\[[\s\S]*?\]\*/g, '$1');
 
         var output = '';
         rendered = 'output=\`' + render(rendered) + '\`;';

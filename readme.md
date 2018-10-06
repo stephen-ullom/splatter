@@ -46,7 +46,7 @@ Conditions:
 Make comments anywhere:
 
 ```html
-*[ I'm feeling blue ]
+*[ I'm feeling blue ]*
 ```
 Here's an example:
 
