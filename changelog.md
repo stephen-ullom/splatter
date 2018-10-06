@@ -1,6 +1,7 @@
 # 0.1.2
 
 - Changed comments from `*[ comment ]` to `*[ comment ]*`
+
 # 0.1.1
 
 - Bug fixes
